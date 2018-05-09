@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     <!--展示查询列表-->
+    {% include 'base_bloglist.html' %}
+
+    <!--分页显示-->
+    {% with post_list as queryset %}
+        {% include 'base_paginator.html' %}
+    {% endwith %}
+
+{% endblock %}

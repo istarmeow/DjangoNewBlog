@@ -1,0 +1,19 @@
+<!--分页模块，传递的参数为queryset-->
+<div>
+    {% if queryset.object_list and queryset.paginator.num_pages > 1 %}
+        <div>
+            <!--上一页和下一页粪便位于底端左右，且鼠标移动上去不显示链接下划线-->
+            {% if queryset.has_previous %}
+                <a class="footer" href="?page={{ post_list.previous_page_number }}" style="text-decoration: none; float: left;">
+                    <i class="fa fa-angle-left"></i>&nbsp;上一页
+                </a>
+            {% endif %}
+
+            {% if queryset.has_next %}
+                <a class="footer" href="?page={{ post_list.next_page_number }}" style="text-decoration: none; float: right;">
+                    下一页&nbsp;<i class="fa fa-angle-right"></i>
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
